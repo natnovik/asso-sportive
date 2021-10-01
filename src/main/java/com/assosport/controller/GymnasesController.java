@@ -7,22 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.assosport.model.Gymnases;
-import com.assosport.service.AssoSportInterfaceService;
-import com.assosport.service.GymnasesServiceImp;
+import com.assosport.service.GymInterfaceService;
 
 @RestController
 @RequestMapping("api/gymnases")
 public class GymnasesController {
 	@Autowired
-//	private AssoSportInterfaceService gymnasesService;
-	private GymnasesServiceImp gymnasesService;
+	private GymInterfaceService gymnasesService;
+//	private GymnasesServiceImp gymnasesService;
 	
-//	@PostMapping("/add")
-//    public Gymnases saveGymnase(@RequestBody Gymnases gymnase) {
-//
-//       
-//	return gymnasesService.create(gymnase);
-//    }
+	@PostMapping("/add")
+    public Gymnases addGymnase(@RequestBody Gymnases gymnase) {
+		return gymnasesService.create(gymnase);
+    }
 
     @GetMapping("/all")
     public List<Gymnases> getAllGymnases() {
@@ -30,14 +27,14 @@ public class GymnasesController {
         return gymnasesService.read();
     }
 	
-//	  @PutMapping("/update") public Gymnases updateGymnase(@RequestBody
-//	  Gymnases gymnase) {
-//	 
-//	  return gymnasesService.update(gymnase); }
-//	 
-//	  @DeleteMapping("/{id}") public Map<String, String>
-//	  deleteGymnase(@PathVariable String id) {
-//	  
-//	  return gymnasesService.delete(id); }
+	  @PutMapping("/update") public Gymnases updateGymnase(@RequestBody
+	  Gymnases gymnase) {
+	 
+	  return gymnasesService.update(gymnase); }
+	 
+	  @DeleteMapping("/{id}") public Map<String, String>
+	  deleteGymnase(@PathVariable String id) {
+	  
+	  return gymnasesService.delete(id); }
 	
 }
