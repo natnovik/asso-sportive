@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.assosport.model.Gymnases;
 import com.assosport.model.Sportif;
 
 @Service
@@ -17,6 +18,5 @@ public interface SportifInterfaceService {
 	Sportif update(Sportif s);
 	
 	Map<String,String> delete(String id);
-	
 
 }

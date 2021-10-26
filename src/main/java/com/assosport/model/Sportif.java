@@ -31,7 +31,7 @@ public class Sportif {
 	private int idSportifConseiller;
 	
 	@Field(name = "Sports")
-	private List<Sport> sport;
+	private Sport sport;
 	
 	public Sportif() {
 	}
@@ -92,11 +92,11 @@ public class Sportif {
 		this.idSportifConseiller = idSportifConseiller;
 	}
 
-	public List<Sport> getSport() {
+	public Sport getSport() {
 		return sport;
 	}
 
-	public void setSport(List<Sport> sport) {
+	public void setSport(Sport sport) {
 		this.sport = sport;
 	}
 	

@@ -1,5 +1,6 @@
 package com.assosport.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,21 +23,31 @@ public class SportifServiceImp implements SportifInterfaceService {
 	
 	@Override
 	public Sportif create(Sportif s) {
-		return sRepository.insert(s);
+		return sRepository.save(s);
 	}
 
 	@Override
 	public Sportif update(Sportif s) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return sRepository.save(s);
 	}
 
 	@Override
 	public Map<String, String> delete(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		//Total count of data before delete
+        long beforeDelete = sRepository.count();
+
+        sRepository.deleteById(id);
+
+        // Total count of data after delete
+        long afterDelete = sRepository.count();
+
+        String messageValue = beforeDelete == afterDelete ? "Something went wrong!" : "Record deleted";
+
+        Map<String, String> deleteMap = new HashMap<>();
+        deleteMap.put("message", messageValue);
+
+        return deleteMap;
 	}
-	
-	
-	
+		
 }
