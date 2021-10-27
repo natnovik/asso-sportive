@@ -19,7 +19,7 @@ public class AssociationSportApplication {
 		SpringApplication.run(AssociationSportApplication.class, args);
 	}
 
-	@Bean
+/*	@Bean
 	public WebMvcConfigurer getCorsConfiguration(){
 		return new WebMvcConfigurer() {
 
@@ -34,5 +34,5 @@ public class AssociationSportApplication {
 						.allowedHeaders("*");
 			}
 		};
-	}
+	}*/
 }
