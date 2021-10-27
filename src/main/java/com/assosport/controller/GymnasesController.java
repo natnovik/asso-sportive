@@ -11,6 +11,7 @@ import com.assosport.service.GymInterfaceService;
 
 @RestController
 @RequestMapping("api/gymnases")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class GymnasesController {
 	@Autowired
 	private GymInterfaceService gymnasesService;
@@ -18,10 +19,12 @@ public class GymnasesController {
 	
 	@PostMapping("/add")
     public Gymnases addGymnase(@RequestBody Gymnases gymnase) {
+
 		return gymnasesService.create(gymnase);
     }
 
     @GetMapping("/all")
+	//we need port at we work in a development
     public List<Gymnases> getAllGymnases() {
 
         return gymnasesService.read();
