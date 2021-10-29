@@ -1,13 +1,10 @@
 package com.assosport.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.assosport.model.Sportif;
 import com.assosport.service.SportifInterfaceService;
@@ -28,6 +25,14 @@ public class SportifController {
 	public Sportif addSportif(@RequestBody Sportif s) {
 		return sportifService.create(s);
 	}
+
+	@PutMapping("/update")
+	public Sportif updateSportif(@RequestBody Sportif s) {
+		return sportifService.update(s);
+	}
 	
-	
+	@DeleteMapping("/delete/{id}")
+	public Map<String, String>  deleteSportif(@PathVariable String id){
+		return sportifService.delete(id);
+	}
 }

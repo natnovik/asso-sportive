@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 public class CorsConfig {
 
-    @Bean
+    /*@Bean
     public WebMvcConfigurer getCorsConfiguration(){
         return new WebMvcConfigurer() {
 
@@ -22,5 +22,5 @@ public class CorsConfig {
                         .allowedHeaders("*");
             }
         };
-    }
+    }*/
 }

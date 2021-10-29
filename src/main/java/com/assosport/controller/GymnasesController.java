@@ -30,14 +30,16 @@ public class GymnasesController {
         return gymnasesService.read();
     }
 	
-	  @PutMapping("/update") public Gymnases updateGymnase(@RequestBody
-	  Gymnases gymnase) {
+	  @PutMapping("/update")
+	  public Gymnases updateGymnase(@RequestBody Gymnases gymnase) {
+
+	  return gymnasesService.update(gymnase);
+	}
 	 
-	  return gymnasesService.update(gymnase); }
-	 
-	  @DeleteMapping("/{id}") public Map<String, String>
-	  deleteGymnase(@PathVariable String id) {
+	  @DeleteMapping("/delete/{id}")
+	  public Map<String, String> deleteGymnase(@PathVariable String id) {
 	  
-	  return gymnasesService.delete(id); }
+	  return gymnasesService.delete(id);
+	}
 	
 }
